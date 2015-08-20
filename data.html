@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <title>CoderByte Solution</title>
+  <link href="site.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav id="nav01"></nav>
+
+  <div id="main">
+  <h1>CoderByte Solutions</h1> <br>
+  <center><p>Input Numbers or String in the following Text Box... I know, its fun</p></center>
+    
+           
+              <div>
+                <table style="width:100%" class="curvedEdges"> 
+                <tr ><td class="box" ><center>
+                  <h3> First Reverse </h3>
+                <img src="img/reverse.jpeg" alt="reverse a string" style="width:128px;height:128px;">
+                <br>
+                <input type='string' placeholder='type string to reverse' id='str'><br>
+                <button type='button' onclick="reverse(str)" >Submit</button>
+                <p id="rev"> </p> <center> </td>          
+               &nbsp;
+
+              <td class="box"><center>
+                <h3> First Factorial </h3>
+                <img src="img/factorial.gif" alt="First Factorial" style="width:128px;height:128px;">
+                <br>
+                <input type='number' placeholder='Input a Number' id='num'> <br>
+                <button type='button' onclick="FirstFactorial(num)" >Submit</button>
+                <p id="fac"> </p>              
+               &nbsp;</center></td>
+            <td class="box"><center>
+              <h3> Letter Count </h3>
+                <img src="img/letter.jpeg" alt="Letter Count" style="width:128px;height:128px;">
+                <br>
+                <input type='string' placeholder='I dont work yet' id='lett'><br>
+                <button type='button' onclick="letterCount(str)" >Submit</button>
+                <p id="cnt"> </p>   &nbsp; </center></td>
+
+                <td class="box"><center>
+                  <h3> Prime Number </h3>
+                <img src="img/prime.jpeg" alt="Prime Number" style="width:128px;height:128px;">
+                <br>
+                <input type='number' placeholder='Is number Prime' id='pnum'><br>
+                <button type='button' onclick="isPrime(num)" >Submit</button>
+                <p id="prim"> </p>   &nbsp;</center></td></center></tr></table>
+                <table style="width:100%" class="curvedEdges"> 
+                <tr>
+                <td>
+                  <h3> Longest Word </h3>
+                  <img src="img/long.png" alt="Longest Word" style="width:128px;height:128px;">
+                <br>
+                <input type='String' placeholder='Input words' id='word'>
+                <button type='button' onclick="LongestWord(str)" >Submit</button>
+                <p id="long"> </p>   &nbsp;
+
+                </td>
+
+                <td>
+                  <h3> Letter Changes </h3>
+                  <img src="img/change.jpeg" alt="change words" style="width:128px;height:128px;">
+                <br>
+                <input type='String' placeholder='Input words' id='change'>
+                <button type='button' onclick="LetterChanges(str)" >Submit</button>
+                <p id="chge"> </p>   &nbsp;
+
+                </td>
+
+                <td>
+                  <h3> Simple Adding </h3>
+                  <img src="img/add.gif" alt="add words" style="width:128px;height:128px;">
+                <br>
+                <input type='number' placeholder='Enter a number' id='sadd'>
+                <button type='button' onclick="SimpleAdding(num)" >Submit</button>
+                <p id="add"> </p>   &nbsp;
+
+                </td>
+
+                <td>
+                  <h3> Letter Capitalize </h3>
+                  <img src="img/cap.png" alt="capitalize words" style="width:128px;height:128px;">
+                <br>
+                <input type='string' placeholder='Enter a string' id='dd'>
+                <button type='button' onclick="LetterCapitalize(str)" >Submit</button>
+                <p id="rin"> </p>   &nbsp;
+
+                </td>
+
+              </tr></table >
+              <table style="width:100%" class="curvedEdges">
+
+              <tr>
+                <td>
+                  <h3> Simple Symbol </h3>
+                  <img src="img/simple.jpeg" alt="Simple Symbol" style="width:128px;height:128px;">
+                <br>
+                <input type='string' placeholder='Enter a string' id='sy'>
+                <button type='button' onclick="SimpleSymbols(str)" >Submit</button>
+                <p id="sym"> </p>   &nbsp;
+                </td>
+
+                <td>
+                  <h3> Time Convert </h3>
+                  <img src="img/clock.png" alt="Time Convert" style="width:128px;height:128px;">
+                <br>
+                <input type='number' placeholder='Enter a number' id='numb'>
+                <button type='button' onclick="TimeConvert(num)" >Submit</button>
+                <p id="mun"> </p>   &nbsp;
+                </td>
+
+                <td>
+                  <h3> Alphabet Soup </h3>
+                  <img src="img/sort.png" alt="Sort Alphabet" style="width:128px;height:128px;">
+                <br>
+                <input type='string' placeholder='Enter a string' id='ring'>
+                <button type='button' onclick="AlphabetSoup(str)" >Submit</button>
+                <p id="val"> </p>   &nbsp;
+                </td>
+
+                <td>
+                  <h3> ABC Check </h3>
+                  <img src="img/check.jpeg" alt="AB Check" style="width:128px;height:128px;">
+                <br>
+                <input type='string' placeholder='Enter a string' id='valu'>
+                <button type='button' onclick="ABCheck(str)" >Submit</button>
+                <p id="ding"> </p>   &nbsp;
+                </td>
+              </tr> </table>
+
+               <table style="width:100%" class="curvedEdges">
+              <tr>
+                <td>
+                  <h3> Vowel Count </h3>
+                  <img src="img/vowel.jpeg" alt="vowel Count" style="width:128px;height:128px;">
+                <br>
+                <input type='string' placeholder='Enter a string' id='vow'>
+                <button type='button' onclick="VowelCount(str)" >Submit</button>
+                <p id="wel"> </p>   &nbsp;
+                </td>
+
+                <td>
+                  <h3> Word Count </h3>
+                  <img src="img/word.gif" alt="vowel Count" style="width:128px;height:128px;">
+                <br>
+                <input type='string' placeholder='Enter a string' id='wrd'>
+                <button type='button' onclick="WordCount(str)" >Submit</button>
+                <p id="cont"> </p>   &nbsp;
+                </td>
+
+                <td>
+                  <h3> Ex Oh </h3>
+                  <img src="img/ex.png" alt="ExOh Count" style="width:128px;height:128px;">
+                <br>
+                <input type='string' placeholder='Enter a string' id='xo'>
+                <button type='button' onclick="ExOh(str)" >Submit</button>
+                <p id="exh"> </p>   &nbsp;
+                </td>
+
+                <td>
+                  <h3> Parlindrome </h3>
+                  <img src="img/pal.png" alt="Palindrome" style="width:128px;height:128px;">
+                <br>
+                <input type='string' placeholder='Enter a string' id='pal'>
+                <button type='button' onclick="Palindrome(str)" >Submit</button>
+                <p id="dro"> </p>   &nbsp;
+                </td>
+              </tr></table>
+               <table style="width:100%" class="curvedEdges">
+              <tr>
+                <td>
+                  <h3> ArithGeo </h3>
+                  <img src="img/geo.jpeg" alt="Arith" style="width:128px;height:128px;">
+                <br>
+                <input type='number' placeholder='Enter numbers' id='arith'>
+                <button type='button' onclick="ArithGeo(num)" >Submit</button>
+                <p id="geo"> </p>   &nbsp;
+                </td>
+                <td>
+                  <h3> Check Number </h3>
+                  <img src="img/check.png" alt="Arith" style="width:128px;height:128px;">
+                <br>
+                <input type='number' placeholder='I dont quite work right' id='num2'>
+                <button type='button' onclick="CheckNums(num1,num2)" >Submit</button>
+                <p id="num1"> </p>   &nbsp;
+                </td>
+              </tr>
+
+              </table>
+              </div>
+
+  <br><br>
+</div>
+  <br><br>
+<center>
+ <a target="_blank" href="https://www.facebook.com/"> <i class="fa fa-facebook-official fa-3x" style="color:#3b5998">&nbsp;</i> </a>
+  <a target="_blank" href="https://www.linkedin.com/pub/ajoke-salaudeen/a4/661/595"><i class="fa fa-linkedin-square fa-3x" style="color:#007BB6">&nbsp;</i></a>
+  <a target="_blank" href="https://github.com/joksina?tab=repositories"><i class="fa fa-github-alt fa-3x" style="color:#FF8942">&nbsp;</i></a>
+  <a target="_blank" href="https://twitter.com/"><i class="fa fa-twitter fa-3x" style="color:#4099FF">&nbsp;</i></a>
+  <a target="_blank" href="mailto:jksalaudeen@yahoo.com"><i class="fa fa-envelope fa-3x" style="color:red">&nbsp;</i></a>
+</center>
+  
+  <footer id="foot01"></footer>
+  
+  <script src="script.js"></script>
+  <script src="js.js"></script>
+</body>
+</html>
