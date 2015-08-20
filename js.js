@@ -163,14 +163,17 @@ function VowelCount(str) {
   // code goes here 
   var vowel = "aeiouAEIOU";
   var count = 0;
-  for(var i = 0; i <str.length ; i++){
-    if (vowel.indexOf(str[i]) !== -1)  {
-      count += 1;
-    }
+  //iterate through the stringd to check vowels
+  forEach(str, function(value){
+  if(vowel.indexOf(value) !== -1){
+    count += 1;
   }
+})
   document.getElementById("wel").innerHTML = count; 
          
 }
+
+
 
 //Word Count
 function WordCount(str) { 
@@ -225,8 +228,8 @@ function ExOh(str) {
 function ArithGeo(num){
 	num = document.getElementById("arith").value
  	var first=num[0];
-    var second=num[1];
-    var third=num[2]; 
+  var second=num[1];
+  var third=num[2]; 
     if ((second-first) === (third-second)){
       var met = "Arithmetic";
       }
@@ -253,16 +256,6 @@ function letterCount(str){
    
    document.getElementById("cnt").innerHTML = count;
          
-}
-
-//Prime
-function prime(num) {
-  if (num < 2) return false;
-  return reduce(num, function(accum, curr, index){
-    if(index % curr === 0){
-      return accum;
-}else{return !accum;}
-  }, false);
 }
 
 //Creating each so my codes can work
