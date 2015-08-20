@@ -163,7 +163,7 @@ function VowelCount(str) {
   // code goes here 
   var vowel = "aeiouAEIOU";
   var count = 0;
-  //iterate through the stringd to check vowels
+  //iterate through the string to check vowels
   forEach(str, function(value){
   if(vowel.indexOf(value) !== -1){
     count += 1;
@@ -189,25 +189,26 @@ function WordCount(str) {
 function ExOh(str) { 
 	str = document.getElementById("xo").value;
   // code goes here  
-	var co = 0;
-  var cx = 0;
+	var cOh = 0;
+  var cEx = 0;
   var yOrN = false;
   str = str.split("") 
-    for(var i = 0; i < str.length; i++) {
-      if (str[i]==="o"){    
-          co = co + 1;
-      }else if (str[i]==="x"){
-          cx = cx + 1;
-      }    
-    }
-    if (co === cx){
+  //iterate to check for x and o
+  forEach(str, function(value){
+  if(value === "o"){
+    cOh += 1;
+  }else if(value === "x"){
+    cEx += 1
+  }
+})
+  if (cOh === cEx){
     yOrN = true;
-    }
-    else{
+  }else{
     yOrN = false; 
-    }  
+  }  
     document.getElementById("exh").innerHTML = yOrN;    
 }
+
    
  //Palindrome
 
@@ -232,14 +233,12 @@ function ArithGeo(num){
   var third=num[2]; 
     if ((second-first) === (third-second)){
       var met = "Arithmetic";
-      }
-    else if ((second/first) === (third)/(second)){
+    }else if ((second/first) === (third)/(second)){
        met = "Geometric";
-      }
-    else {
+    }else {
        met = -1;
     }
-    document.getElementById("geo").innerHTML = met;
+  document.getElementById("geo").innerHTML = met;
 }
 
 //LetterCount
@@ -249,12 +248,12 @@ function letterCount(str){
   forEach(str, function(value){
     if(count.hasOwnProperty(value)){
       count[value] += 1;
-    } else {
+      } else {
       count[value] = 1;
     }
   })
    
-   document.getElementById("cnt").innerHTML = count;
+  document.getElementById("cnt").innerHTML = count;
          
 }
 
