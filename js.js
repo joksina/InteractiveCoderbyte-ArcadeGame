@@ -244,17 +244,35 @@ function ArithGeo(num){
 //LetterCount
 function letterCount(str){
 	document.getElementById("lett").value;
-	var count = {};
-  forEach(str, function(value){
-    if(count.hasOwnProperty(value)){
-      count[value] += 1;
-      } else {
-      count[value] = 1;
-    }
+	var count = 0;
+  var letter = 1;
+  forEach(str, function(value, index){
+
+    if(str.charAt(index + count)=== str.charAt(index + (count + 1)) ){
+      letter++;
+      } 
+      count++;
+   
   })
    
-  document.getElementById("cnt").innerHTML = count;
+  document.getElementById("cnt").innerHTML = letter;
          
+}
+
+//SecondGreatLow
+function SecondGreatLow(arr){
+  document.getElementById("sec").value;
+  arr = arr.sort(function(a,b){return a - b});
+  var newArr = arr.filter(function(value, index, list) {
+    return list.indexOf(value) === index;
+});
+  var arg;
+  if (newArr.length < 3) {
+    arg = newArr[1] + " " + newArr[0];
+  } else {
+    arg = newArr[1] + " " + newArr[newArr.length-2];
+  }
+  document.getElementById("grt").innerHTML = arg;       
 }
 
 //Creating each so my codes can work
@@ -269,3 +287,25 @@ function forEach(list, cb){
     }
   }
 };
+
+function isPrime(num){
+  for(var i = 2; i < num; i++){
+    if(num % i === 0){
+      return false;
+    }
+    
+  }
+  return true;
+}
+
+function primeSieve(start, end){
+  var primed = []
+  for(var i = start; i < end; i++){
+    if(isPrime(i)){
+      primed.push(i); 
+    }
+  }
+  return primed;
+}
+
+

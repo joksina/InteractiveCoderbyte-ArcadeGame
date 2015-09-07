@@ -41,5 +41,26 @@ function factorial(number){
 
 // prime number
 function isPrime(num){
+	function isPrime(num){
+	for(var i = 2; i < num; i++){
+		if(num % i === 0){
+			return false;
+		}
+		
+	}
+	return true;
+}
+
+function primeSieve(start, end){
+	var primed = []
+	for(var i = start; i < end; i++){
+		if(isPrime(i)){
+			primed.push(i); 
+		}
+	}
+	return primed;
+}
+
+
 	
 }
