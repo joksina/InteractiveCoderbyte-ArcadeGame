@@ -2,6 +2,12 @@
 <html>
 
 <head>
+  <style>
+canvas  {
+    background-image: url("img/background.png");
+    background-color: #cccccc;
+}
+</style>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <title>CoderByte Solution</title>
   <link href="site.css" rel="stylesheet">
@@ -12,12 +18,14 @@
 
   <div id="main">
   <h1>Arcade Game</h1> 
-  <marquee direction="down" behavior="alternate" height="150"><marquee behavior="alternate">
-   <h2> Coming Soon</h2>
-  </marquee>
-</marquee>
+<div><center><canvas id="canvas" width = "700" height = "575">
+</canvas></center></div>
+  
+  
 </div>
 
+<p><em>This is a work in progress</em></p>
+<script src="game.js"></script>
 
 <br><br>
   <center>

@@ -163,14 +163,17 @@ function VowelCount(str) {
   // code goes here 
   var vowel = "aeiouAEIOU";
   var count = 0;
-  for(var i = 0; i <str.length ; i++){
-    if (vowel.indexOf(str[i]) !== -1)  {
-      count += 1;
-    }
+  //iterate through the string to check vowels
+  forEach(str, function(value){
+  if(vowel.indexOf(value) !== -1){
+    count += 1;
   }
+})
   document.getElementById("wel").innerHTML = count; 
          
 }
+
+
 
 //Word Count
 function WordCount(str) { 
@@ -186,25 +189,26 @@ function WordCount(str) {
 function ExOh(str) { 
 	str = document.getElementById("xo").value;
   // code goes here  
-	var co = 0;
-  var cx = 0;
+	var cOh = 0;
+  var cEx = 0;
   var yOrN = false;
   str = str.split("") 
-    for(var i = 0; i < str.length; i++) {
-      if (str[i]==="o"){    
-          co = co + 1;
-      }else if (str[i]==="x"){
-          cx = cx + 1;
-      }    
-    }
-    if (co === cx){
+  //iterate to check for x and o
+  forEach(str, function(value){
+  if(value === "o"){
+    cOh += 1;
+  }else if(value === "x"){
+    cEx += 1
+  }
+})
+  if (cOh === cEx){
     yOrN = true;
-    }
-    else{
+  }else{
     yOrN = false; 
-    }  
+  }  
     document.getElementById("exh").innerHTML = yOrN;    
 }
+
    
  //Palindrome
 
@@ -225,44 +229,50 @@ function ExOh(str) {
 function ArithGeo(num){
 	num = document.getElementById("arith").value
  	var first=num[0];
-    var second=num[1];
-    var third=num[2]; 
+  var second=num[1];
+  var third=num[2]; 
     if ((second-first) === (third-second)){
       var met = "Arithmetic";
-      }
-    else if ((second/first) === (third)/(second)){
+    }else if ((second/first) === (third)/(second)){
        met = "Geometric";
-      }
-    else {
+    }else {
        met = -1;
     }
-    document.getElementById("geo").innerHTML = met;
+  document.getElementById("geo").innerHTML = met;
 }
 
 //LetterCount
 function letterCount(str){
 	document.getElementById("lett").value;
-	var count = {};
-  forEach(str, function(value){
-    if(count.hasOwnProperty(value)){
-      count[value] += 1;
-    } else {
-      count[value] = 1;
-    }
+	var count = 0;
+  var letter = 1;
+  forEach(str, function(value, index){
+
+    if(str.charAt(index + count)=== str.charAt(index + (count + 1)) ){
+      letter++;
+      } 
+      count++;
+   
   })
    
-   document.getElementById("cnt").innerHTML = count;
+  document.getElementById("cnt").innerHTML = letter;
          
 }
 
-//Prime
-function prime(num) {
-  if (num < 2) return false;
-  return reduce(num, function(accum, curr, index){
-    if(index % curr === 0){
-      return accum;
-}else{return !accum;}
-  }, false);
+//SecondGreatLow
+function SecondGreatLow(arr){
+  document.getElementById("sec").value;
+  arr = arr.sort(function(a,b){return a - b});
+  var newArr = arr.filter(function(value, index, list) {
+    return list.indexOf(value) === index;
+});
+  var arg;
+  if (newArr.length < 3) {
+    arg = newArr[1] + " " + newArr[0];
+  } else {
+    arg = newArr[1] + " " + newArr[newArr.length-2];
+  }
+  document.getElementById("grt").innerHTML = arg;       
 }
 
 //Creating each so my codes can work
@@ -277,3 +287,25 @@ function forEach(list, cb){
     }
   }
 };
+
+function isPrime(num){
+  for(var i = 2; i < num; i++){
+    if(num % i === 0){
+      return false;
+    }
+    
+  }
+  return true;
+}
+
+function primeSieve(start, end){
+  var primed = []
+  for(var i = start; i < end; i++){
+    if(isPrime(i)){
+      primed.push(i); 
+    }
+  }
+  return primed;
+}
+
+
