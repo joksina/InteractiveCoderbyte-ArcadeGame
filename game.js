@@ -1,7 +1,7 @@
 // Create the canvas
 var canvas = document.getElementById("canvas")
 var	ctx = canvas.getContext("2d");
- //document.body.appendChild(canvas); 
+ 
 
 // Background image
 var bgReady = false;
@@ -19,20 +19,20 @@ heroImage.onload = function () {
 };
 heroImage.src = "img/pink.png";
 
-// Monster image
-var monsterReady = false;
-var monsterImage = new Image();
-monsterImage.onload = function () {
-	monsterReady = true;
+// Gem image
+var gemReady = false;
+var gemImage = new Image();
+gemImage.onload = function () {
+	gemReady = true;
 };
-monsterImage.src = "img/green.png";
+gemImage.src = "img/green.png";
 
 // Game objects
 var hero = {
-	speed: 256 // movement in pixels per second
+	speed: 300 // hero movement in pixels per second
 };
-var monster = {};
-var monstersCaught = 0;
+var gem = {};
+var gemsCaught = 0;
 
 var block1 = {x:173,y:288,w:32,h:32,type:"block"};
 var block2 = {x:300,y:288,w:162,h:32,type:"block"};
@@ -52,18 +52,18 @@ addEventListener("keyup", function (e) {
 	delete keysDown[e.keyCode];
 }, false);
 
-// Reset the game when the player catches a monster
+// Reset the game when the player catches a gem
 var reset = function () {
 	hero.x = canvas.width / 2;
 	hero.y = canvas.height / 2;
 	hero.w = 32;
 	hero.h = 32;
 
-	// Throw the monster somewhere on the screen randomly
-	monster.w = 32;
-	monster.h = 32;
-	monster.x = (Math.random() * (canvas.width - 32));
-	monster.y = (Math.random() * (canvas.height - 66 - 32));
+	// Throw the gem randomly on the screen
+	gem.w = 32;
+	gem.h = 32;
+	gem.x = (Math.random() * (canvas.width - 32));
+	gem.y = (Math.random() * (canvas.height - 66 - 32));
 };
 
 // Update game objects
@@ -93,14 +93,14 @@ var update = function (modifier) {
 	}
 	}
 
-	// Are they touching?
+	// Are the hero and gem touching?
 	if (
-		hero.x <= (monster.x + 32)
-		&& monster.x <= (hero.x + 32)
-		&& hero.y <= (monster.y + 32)
-		&& monster.y <= (hero.y + 32)
+		hero.x <= (gem.x + 32)
+		&& gem.x <= (hero.x + 32)
+		&& hero.y <= (gem.y + 32)
+		&& gem.y <= (hero.y + 32)
 	) {
-		++monstersCaught;
+		++gemsCaught;
 		reset();
 	}
 };
@@ -115,8 +115,8 @@ var render = function () {
 		ctx.drawImage(heroImage, hero.x, hero.y);
 	}
 
-	if (monsterReady) {
-		ctx.drawImage(monsterImage, monster.x, monster.y);
+	if (gemReady) {
+		ctx.drawImage(gemImage, gem.x, gem.y);
 	}
 
 	// Score
@@ -124,7 +124,7 @@ var render = function () {
 	ctx.font = "24px Helvetica";
 	ctx.textAlign = "left";
 	ctx.textBaseline = "top";
-	ctx.fillText("Gems caught: " + monstersCaught, 32, 32);
+	ctx.fillText("Gems caught: " + gemsCaught, 32, 32);
 };
 
 // The main game loop
