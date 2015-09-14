@@ -2,14 +2,13 @@
 function count(str){
 	var coll = str.split(" ");
 	return coll.reduce(function(accum, curr){
-	var longest;
+	//var longest;
 		if(accum.length > curr.length){
-		longest = accum;
+			return accum;
 
 		}else{
-		longest = curr;
+			return curr;
 		}
-		return longest;
 	})
 }
 
@@ -25,6 +24,8 @@ function letterCount(str){
 		return accum;
 	},{})
 }
+
+
 
 //letter reverse
 function reverse(str){
