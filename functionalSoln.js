@@ -12,19 +12,6 @@ function count(str){
 	})
 }
 
-//lettercount
-function letterCount(str){
-	var coll = str.split("");
-	return coll.reduce(function(accum, curr){
-		if(accum[curr]){
-			accum[curr] += 1;
-		}else{
-			accum[curr] = 1;
-		}
-		return accum;
-	},{})
-}
-
 
 
 //letter reverse
